@@ -1,6 +1,6 @@
 /* SMART on FHIR POC Global Styles */
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap'); 
 
 * {
   margin: 0;
@@ -13,6 +13,13 @@ body {
   line-height: 1.6;
   color: #1f2937;
   background-color: #f8fafc;
+}
+.btn {
+  font-family: 'Outfit' ;
+  
+}
+input[type="date" i] {
+   font-family: 'Outfit' ;
 }
 
 :root {

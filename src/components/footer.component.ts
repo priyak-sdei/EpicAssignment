@@ -61,7 +61,7 @@ import { CommonModule } from '@angular/common';
         
         <div class="footer-bottom">
           <div class="footer-meta">
-            <p>&copy; 2024 smartData Healthcare Solutions. All rights reserved.</p>
+            <p>&copy; 2025 smartData Enterprises. All rights reserved.</p>
             <p class="demo-notice">
               This is a proof-of-concept demonstration using Epic's FHIR Sandbox environment
             </p>
