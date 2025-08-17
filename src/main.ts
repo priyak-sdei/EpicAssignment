@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+
 import { HeaderComponent } from './components/header.component';
 import { HomeComponent } from './components/home.component';
 import { PatientsComponent } from './components/patients.component';
@@ -65,4 +67,8 @@ export class App {
   }
 }
 
-bootstrapApplication(App);
+bootstrapApplication(App, {
+  providers: [
+    importProvidersFrom(HttpClientModule)
+  ]
+});

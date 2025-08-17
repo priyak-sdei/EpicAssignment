@@ -1,0 +1,33 @@
+<div class="add-patient-container">
+  <h1>Add New Patient</h1>
+  <form [formGroup]="patientForm" (ngSubmit)="onSubmit()">
+    <div class="form-grid">
+      <input formControlName="firstName" placeholder="First Name *" required>
+      <input formControlName="lastName" placeholder="Last Name *" required>
+      <input type="date" formControlName="dateOfBirth" required>
+      <select formControlName="gender" required>
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+      <input formControlName="phoneNumber" placeholder="Phone Number">
+      <input formControlName="emailAddress" placeholder="Email Address">
+      <input formControlName="streetAddress" placeholder="Street Address">
+      <input formControlName="city" placeholder="City">
+      <input formControlName="state" placeholder="State">
+      <input formControlName="zipCode" placeholder="ZIP Code">
+    </div>
+
+    <div class="form-actions">
+      <button type="button" (click)="resetForm()">Reset</button>
+      <button type="submit" [disabled]="!patientForm.valid || isSubmitting">
+        {{ isSubmitting ? 'Adding...' : 'Add Patient' }}
+      </button>
+    </div>
+  </form>
+
+  <div *ngIf="successMessage" class="success-message">
+    {{ successMessage }}
+  </div>
+</div>
