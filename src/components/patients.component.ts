@@ -13,7 +13,7 @@ import { CommonService } from '../services/common';
 export class PatientsComponent {
   filteredPatients: Patient[] = [];
   loading = false;
-
+  MRN: string = '';
   searchModel = {
     family: '',
     given: '',
@@ -30,13 +30,33 @@ export class PatientsComponent {
 
   onSearch() {
     const hasInput = Object.values(this.searchModel).some(val => val && val.trim());
-    if (!hasInput) {
+    if (!hasInput && !this.MRN && this.MRN.trim() !== '') {
       this.filteredPatients = [];
       return;
     }
 
     this.loading = true;
-    this.patientService.searchPatients(this.searchModel).subscribe(
+   if (this.MRN && this.MRN.trim() !== '') 
+    {
+       this.patientService
+  .searchPatientByMRN(this.MRN)
+  .subscribe(
+    res => {
+      if (res.statusCode === 200 && res.data) {
+        this.filteredPatients = [res.data];
+      } else {
+        this.filteredPatients = [];
+      }
+      this.loading = false;
+    },
+    err => {
+      console.error(err);
+      this.loading = false;
+    }
+  );
+    }
+    else{
+ this.patientService.searchPatients(this.searchModel).subscribe(
       res => {
         this.filteredPatients = (res.statusCode === 200 && res.data) ? res.data : [];
         this.loading = false;
@@ -46,6 +66,8 @@ export class PatientsComponent {
         this.loading = false;
       }
     );
+    }
+   
   }
 
   viewVitals(patientId: string) {

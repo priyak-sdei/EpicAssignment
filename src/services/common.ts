@@ -8,7 +8,7 @@ PatientRegistrationDto
   providedIn: 'root'
 })
 export class CommonService {
-  private apiUrl = 'http://localhost:5011/api'; // change to your C# API
+  private apiUrl = 'http://3.131.105.103:8110/api'; // change to your C# API
 
   constructor(private http: HttpClient) {}
 
@@ -38,5 +38,7 @@ private mapKeyToQueryParam(key: string): string {
   };
   return map[key] || key;
 }
-  
+searchPatientByMRN(id: any): Observable<any> {
+  return this.http.get<any>(`${this.apiUrl}/Patient/ReadPatient/${id}`);
+}
 }
