@@ -176,5 +176,5 @@ export class HeaderComponent {
   @Input() activeTab: string = 'Home';
   @Output() tabChange = new EventEmitter<string>();
   
-  tabs = ['Home', 'Add Patient', 'Patients', 'Vitals'];
+  tabs = ['Home', 'Add Patient', 'Patients'];
 }

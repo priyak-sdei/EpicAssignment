@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
           <h1 class="hero-title">SMART on FHIR Integration Demo</h1>
           <p class="hero-description">
             Seamlessly connect with Epic's healthcare ecosystem through standardized FHIR APIs. 
-        This proof-of-concept demonstrates seamless integration with Epic's FHIR APIs, showcasing patient data retrieval, vitals management
+        This proof-of-concept demonstrates seamless integration with Epic's FHIR APIs, showcasing patient data retrieval
           </p>
         
         </div>
@@ -31,15 +31,7 @@ import { CommonModule } from '@angular/common';
             <p class="feature-description">Secure retrieval of patient demographics, medical history, and clinical data through Epic's FHIR R4 APIs.</p>
           </div>
           
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-              </svg>
-            </div>
-            <h3 class="feature-title">Real-time Vitals</h3>
-            <p class="feature-description">Live monitoring and recording of patient vitals with immediate synchronization to Epic's observation resources.</p>
-          </div>
+       
           
           <div class="feature-card">
             <div class="feature-icon">
